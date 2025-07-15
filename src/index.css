@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 5% 96%; /* Light Gray */
+    --foreground: 240 6% 10%; /* Dark Gray */
+    --card: 240 0% 100%; /* White */
+    --card-foreground: 240 6% 10%;
+    --popover: 240 0% 100%;
+    --popover-foreground: 240 6% 10%;
+    --primary: 221 83% 53%; /* Blue */
+    --primary-foreground: 210 20% 98%;
+    --secondary: 240 5% 96%;
+    --secondary-foreground: 240 6% 10%;
+    --muted: 240 5% 90%;
+    --muted-foreground: 240 4% 46%;
+    --accent: 240 5% 90%;
+    --accent-foreground: 240 6% 10%;
+    --destructive: 0 72% 51%; /* Red */
+    --destructive-foreground: 210 20% 98%;
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 221 83% 53%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+.colombia-gradient {
+  background-image: linear-gradient(to right, #FCD116, #003893, #CE1126);
+}
+
+.floating-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2.5s infinite ease-in-out;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 theme('colors.green.500 / 20%'); }
+  50% { box-shadow: 0 0 0 10px theme('colors.green.500 / 0%'); }
+}
